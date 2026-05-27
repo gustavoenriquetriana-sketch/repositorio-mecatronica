@@ -1,0 +1,178 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+// Importamos todas las fotografías de la Feria 2025
+import imgCircuito from '../../assets/feria-2025/Circuito.jpg';
+import imgInvernadero1 from '../../assets/feria-2025/Invernadero1.jpg';
+import imgInvernadero2 from '../../assets/feria-2025/Invernadero2.jpg';
+import imgInvernadero3 from '../../assets/feria-2025/Invernadero3.png';
+import imgPlantas from '../../assets/feria-2025/Plantas.jpg';
+import imgPuerta from '../../assets/feria-2025/Puerta.jpg';
+import imgVista from '../../assets/feria-2025/Vista.jpeg';
+---
+
+<Layout
+  title="Feria Mecatrónica 2025"
+  description="Proyectos de Innovación — Feria Mecatrónica 2025 UNEXPO Guarenas."
+>
+
+  <section class="bg-gradient-to-r from-[#003a6b] to-[#004b87] text-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+
+      <nav class="flex items-center gap-2 text-white/60 text-sm mb-6">
+        <a href="/" class="hover:text-white transition-colors">Inicio</a>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+        <a href="/galeria" class="hover:text-white transition-colors">Galería</a>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+        <span class="text-white font-medium">Feria 2025</span>
+      </nav>
+
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+        <div>
+          <a href="/galeria"
+            class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/25 text-white text-sm font-semibold px-4 py-2 rounded-xl transition-all mb-5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+            </svg>
+            Volver a la Galería
+          </a>
+          <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-3 py-1.5 rounded-full text-xs font-semibold mb-4 ml-3">
+            📸 Proyectos de Innovación
+          </div>
+          <h1 class="text-3xl md:text-5xl font-extrabold leading-tight mt-2">Feria Mecatrónica 2025</h1>
+          <p class="text-white/70 text-lg mt-3 max-w-xl">
+            Explora los proyectos y la innovación de los estudiantes de Mecatrónica UNEXPO Guarenas en su edición 2025.
+          </p>
+        </div>
+        <div class="bg-white/10 border border-white/20 rounded-xl px-5 py-3 text-center flex-shrink-0">
+          <p class="text-3xl font-extrabold">7</p>
+          <p class="text-white/60 text-xs font-medium uppercase tracking-wide">Fotografías</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <p class="text-slate-400 text-sm mb-6 text-right">Pasa el cursor sobre una foto para ampliarla</p>
+
+    <!-- Grid de Fotos con Astro Image -->
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <Image src={imgInvernadero1} alt="Invernadero 1" class="w-full h-full object-cover aspect-square rounded-xl shadow-sm cursor-pointer hover:opacity-80 hover:scale-105 transition-all duration-300 gallery-img" />
+      <Image src={imgInvernadero2} alt="Invernadero 2" class="w-full h-full object-cover aspect-square rounded-xl shadow-sm cursor-pointer hover:opacity-80 hover:scale-105 transition-all duration-300 gallery-img" />
+      <Image src={imgInvernadero3} alt="Invernadero 3" class="w-full h-full object-cover aspect-square rounded-xl shadow-sm cursor-pointer hover:opacity-80 hover:scale-105 transition-all duration-300 gallery-img" />
+      <Image src={imgCircuito} alt="Circuito Electrónico" class="w-full h-full object-cover aspect-square rounded-xl shadow-sm cursor-pointer hover:opacity-80 hover:scale-105 transition-all duration-300 gallery-img" />
+      <Image src={imgPlantas} alt="Cultivo y Plantas" class="w-full h-full object-cover aspect-square rounded-xl shadow-sm cursor-pointer hover:opacity-80 hover:scale-105 transition-all duration-300 gallery-img" />
+      <Image src={imgPuerta} alt="Sistema de Puerta" class="w-full h-full object-cover aspect-square rounded-xl shadow-sm cursor-pointer hover:opacity-80 hover:scale-105 transition-all duration-300 gallery-img" />
+      <Image src={imgVista} alt="Vista General" class="w-full h-full object-cover aspect-square rounded-xl shadow-sm cursor-pointer hover:opacity-80 hover:scale-105 transition-all duration-300 gallery-img" />
+    </div>
+
+    <div class="mt-8 bg-emerald-50 border border-emerald-200 rounded-2xl p-5 flex items-start gap-3">
+      <div class="text-emerald-500 flex-shrink-0 mt-0.5">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </div>
+      <p class="text-emerald-800 text-sm leading-relaxed">
+        <strong>Imágenes Optimizadas:</strong> Las fotografías están siendo procesadas nativamente por Astro en formato WebP para máxima velocidad.
+      </p>
+    </div>
+
+    <div class="mt-10 flex items-center justify-between">
+      <a href="/galeria" class="inline-flex items-center gap-2 text-[#004b87] font-semibold text-sm hover:underline">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+        </svg>
+        Ver todos los eventos
+      </a>
+      <a href="/galeria/feria-2026" class="inline-flex items-center gap-2 text-[#004b87] font-semibold text-sm hover:underline">
+        Feria 2026 →
+      </a>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal (oculto por defecto) -->
+  <div id="lightbox" class="fixed inset-0 bg-black/90 hidden z-50 flex flex-col items-center justify-center p-4 backdrop-blur-sm transition-opacity duration-300 opacity-0">
+    <!-- Botón Cerrar -->
+    <button id="lightbox-close" class="absolute top-6 right-6 lg:top-10 lg:right-10 text-white font-bold cursor-pointer hover:text-red-400 transition-colors flex items-center gap-2">
+      <span class="hidden sm:inline">Cerrar</span> ✕
+    </button>
+    <!-- Imagen ampliada -->
+    <img id="lightbox-img" class="max-h-[85vh] max-w-full object-contain rounded-lg shadow-2xl transition-transform duration-300 scale-95" src="" alt="Vista ampliada" />
+  </div>
+
+</Layout>
+
+<!-- Motor Vanilla JS para el Lightbox -->
+<script>
+  // Script que se ejecuta en el cliente
+  document.addEventListener('DOMContentLoaded', () => {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.getElementById('lightbox-close');
+    const galleryImgs = document.querySelectorAll('.gallery-img');
+
+    // Función para abrir
+    galleryImgs.forEach(img => {
+      img.addEventListener('click', () => {
+        if (!lightbox || !lightboxImg) return;
+        
+        // Obtener el SRC generado por Astro
+        const src = img.getAttribute('src');
+        if (src) {
+          lightboxImg.setAttribute('src', src);
+          
+          // Efecto de aparición (fade-in + zoom-in sutil)
+          lightbox.classList.remove('hidden');
+          // Pequeño delay para que aplique la animación CSS 'opacity' y 'scale' después de remover el 'hidden'
+          setTimeout(() => {
+            lightbox.classList.remove('opacity-0');
+            lightboxImg.classList.remove('scale-95');
+            lightboxImg.classList.add('scale-100');
+          }, 10);
+        }
+      });
+    });
+
+    // Función para cerrar
+    const closeLightbox = () => {
+      if (!lightbox || !lightboxImg) return;
+      
+      // Efecto de desvanecimiento
+      lightbox.classList.add('opacity-0');
+      lightboxImg.classList.remove('scale-100');
+      lightboxImg.classList.add('scale-95');
+      
+      // Esperar a que acabe la transición antes de ocultar
+      setTimeout(() => {
+        lightbox.classList.add('hidden');
+        lightboxImg.setAttribute('src', '');
+      }, 300); // 300ms coincide con la duración de la transición en Tailwind
+    };
+
+    // Cerrar al hacer click en el botón
+    if(closeBtn) {
+      closeBtn.addEventListener('click', closeLightbox);
+    }
+
+    // Cerrar al hacer click en el fondo negro
+    if(lightbox) {
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+          closeLightbox();
+        }
+      });
+    }
+
+    // Cerrar al presionar la tecla Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !lightbox?.classList.contains('hidden')) {
+        closeLightbox();
+      }
+    });
+  });
+</script>

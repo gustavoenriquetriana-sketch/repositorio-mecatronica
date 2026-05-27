@@ -1,0 +1,165 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import DriveCard from '../../components/DriveCard.astro';
+import { pensum } from '../../data/pensum.js';
+
+export function getStaticPaths() {
+  return (Object.keys(pensum) as Array<keyof typeof pensum>).map((semestre) => ({
+    params: { semestre },
+    props: { materias: pensum[semestre] },
+  }));
+}
+
+const { semestre } = Astro.params;
+const { materias } = Astro.props;
+
+// Número romano para el hero
+const romanos: Record<string, string> = {
+  '1': 'I', '2': 'II', '3': 'III', '4': 'IV', '5': 'V',
+  '6': 'VI', '7': 'VII', '8': 'VIII', '9': 'IX', '10': 'X',
+};
+const romano = romanos[semestre] ?? semestre;
+
+// Semestre anterior y siguiente para navegación
+const num = parseInt(semestre);
+const anterior = num > 1 ? String(num - 1) : null;
+const siguiente = num < 10 ? String(num + 1) : null;
+
+// Orientación académica formal y respetuosa por cada semestre
+const orientacionesAcademicas: Record<string, string> = {
+  '1': 'Este ciclo inicial sienta las bases del cálculo analítico y la comunicación gráfica fundamentales para la ingeniería. Asignaturas como Matemática I y Dibujo I requieren rigor metodológico y dedicación espacial.',
+  '2': 'Se introduce formalmente el estudio físico vectorial (Física I) y se avanza en las herramientas de cálculo en dos dimensiones (Matemática II). El desarrollo de la abstracción analítica es el principal objetivo en esta etapa.',
+  '3': 'Consolidación de las ciencias básicas e inicio formal en el área de la programación (Computación I). Álgebra Lineal y Matemática III proveen el aparato de matrices y ecuaciones diferenciales vitales para el modelado mecánico posterior.',
+  '4': 'Transición hacia las tecnologías mecánicas y eléctricas. Circuitos Eléctricos I introduce el análisis de redes pasivas de primer orden, mientras que Dinámica estudia el movimiento cinético y cinemático de los cuerpos.',
+  '5': 'Ciclo de alta exigencia conceptual. Se introduce la electrónica activa semiconductora (Electrónica I) y el estudio analítico-estático del diseño y resistencia de los materiales mecánicos (Mecánica de Materiales y Mecanismos).',
+  '6': 'Enfoque en sistemas digitales (Diseño de Sistemas Lógicos) y en la teoría clásica de control lineal (Control I). El estudiante aprende a integrar hardware combinacional con procesos de regulación automática.',
+  '7': 'Especialización electromecánica y metodologías sistemáticas de diseño. Se abordan los transductores industriales (Actuadores Eléctricos), el análisis en espacio de estados (Control II) y los laboratorios integrados de instrumentación.',
+  '8': 'Implementación de automatización industrial y lógica de programación en controladores lógicos (Automatización I y Microcontroladores). Inicia formalmente el desarrollo estructurado del Proyecto Mecatrónico de Grado I.',
+  '9': 'Ciclo de síntesis tecnológica. Abarca automatización secuencial avanzada y robótica aplicada (Automatización II). Los estudiantes se enfocan en culminar los prototipos integradores del Proyecto Mecatrónico II.',
+  '10': 'Fase terminal orientada exclusivamente al Entrenamiento Industrial y pasantías académicas, facilitando la inserción y vinculación directa con los procesos del sector productivo nacional.'
+};
+
+const orientacion = orientacionesAcademicas[semestre] || '';
+---
+
+<Layout
+  title={`Semestre ${romano}`}
+  description={`Asignaturas y material didáctico del Semestre ${romano} de Ingeniería Mecatrónica UNEXPO Guarenas.`}
+>
+
+  <!-- ══════════════════════ HERO ══════════════════════ -->
+  <section class="relative overflow-hidden border-b border-white/5 py-14 bg-slate-950/40">
+    <div class="absolute inset-0 engineering-grid opacity-30"></div>
+    <div class="absolute -top-10 -right-10 w-72 h-72 bg-sky-500 rounded-full blur-[90px] opacity-10 pointer-events-none"></div>
+
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-slate-400 text-xs sm:text-sm mb-6">
+        <a href="/" class="hover:text-white transition-colors">Inicio</a>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+        <a href="/semestres" class="hover:text-white transition-colors">Semestres</a>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+        <span class="text-white font-medium">Semestre {romano}</span>
+      </nav>
+
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+        <div class="flex items-center gap-4">
+          <!-- Número romano destacado -->
+          <div class="w-16 h-16 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-2xl font-black text-sky-400 tracking-tight">
+            {romano}
+          </div>
+          <div>
+            <h1 class="text-3xl md:text-4xl font-extrabold text-white">Semestre {romano}</h1>
+            <p class="text-slate-400 mt-1 text-sm">{materias.length} {materias.length === 1 ? 'asignatura' : 'asignaturas'} &bull; Plan Curricular 2012</p>
+          </div>
+        </div>
+
+        <!-- Contador de materias -->
+        <div class="bg-white/5 border border-white/10 rounded-2xl px-5 py-2.5 text-center flex-shrink-0">
+          <p class="text-2xl font-black text-sky-400 leading-none">{materias.length}</p>
+          <p class="text-slate-500 text-[10px] font-bold uppercase tracking-wider mt-1">Materias</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════ GRID DE MATERIAS ══════════════════════ -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+
+    <!-- Orientación Académica del Semestre -->
+    <div class="glass-card rounded-2xl p-6 mb-12 border-sky-500/10 flex items-start gap-4">
+      <div class="text-sky-400 flex-shrink-0 mt-0.5">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5.5 h-5.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+        </svg>
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-sm leading-none mb-1.5">Orientación Académica</h4>
+        <p class="text-slate-400 text-sm leading-relaxed">{orientacion}</p>
+      </div>
+    </div>
+
+    <h2 class="text-lg font-bold text-slate-300 mb-8 flex items-center gap-2">
+      <span>📚</span> Asignaturas del Semestre {romano}
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {materias.map((materia: string) => (
+        <DriveCard
+          titulo={materia}
+          descripcion={`Material de estudio, guías teóricas y recopilación de prácticas para la asignatura de ${materia}.`}
+          icono="book"
+        />
+      ))}
+    </div>
+
+    <!-- Navegación entre semestres -->
+    <div class="mt-16 flex flex-col sm:flex-row gap-4 items-center justify-between glass-card rounded-2xl p-6">
+
+      {anterior ? (
+        <a href={`/semestres/${anterior}`}
+          class="flex items-center gap-3 group">
+          <div class="w-10 h-10 bg-white/5 group-hover:bg-sky-500/10 border border-white/10 group-hover:border-sky-500/30 rounded-xl flex items-center justify-center transition-all duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-slate-400 group-hover:text-sky-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+            </svg>
+          </div>
+          <div>
+            <p class="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Anterior</p>
+            <p class="font-semibold text-slate-300 group-hover:text-sky-400 transition-colors text-sm">Semestre {romanos[anterior]}</p>
+          </div>
+        </a>
+      ) : (
+        <div class="hidden sm:block"></div>
+      )}
+
+      <a href="/semestres" class="text-slate-500 hover:text-sky-400 text-xs sm:text-sm font-semibold tracking-wide uppercase transition-colors text-center">
+        &uarr; Directorio General
+      </a>
+
+      {siguiente ? (
+        <a href={`/semestres/${siguiente}`}
+          class="flex items-center gap-3 justify-end group">
+          <div>
+            <p class="text-[10px] text-slate-500 text-right font-bold uppercase tracking-wider">Siguiente</p>
+            <p class="font-semibold text-slate-300 group-hover:text-sky-400 transition-colors text-sm">Semestre {romanos[siguiente]}</p>
+          </div>
+          <div class="w-10 h-10 bg-white/5 group-hover:bg-sky-500/10 border border-white/10 group-hover:border-sky-500/30 rounded-xl flex items-center justify-center transition-all duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-slate-400 group-hover:text-sky-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </div>
+        </a>
+      ) : (
+        <div class="hidden sm:block"></div>
+      )}
+
+    </div>
+  </section>
+
+</Layout>

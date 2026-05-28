@@ -9,7 +9,7 @@ interface Props {
 
 const { titulo, descripcion } = Astro.props;
 
-const driveUrl = driveLinks[titulo] || "";
+const driveUrl = driveLinks[titulo as keyof typeof driveLinks] || "";
 const isActive = driveUrl !== "";
 
 const formUrl =

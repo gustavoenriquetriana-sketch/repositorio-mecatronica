@@ -1,202 +1,30 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-
-const fotos = [
-  {
-    url: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80',
-    alt: 'Estaciones de desarrollo robótico avanzado e integraciones mecatrónicas.',
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&q=80',
-    alt: 'Prototipo de brazo robótico articulado con control cinemático.',
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?w=600&q=80',
-    alt: 'Módulos didácticos e instrumentación analógica y digital en stand estudiantil.',
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80',
-    alt: 'Placas impresas y microsistemas electrónicos de adquisición de datos.',
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&q=80',
-    alt: 'Interfaces de programación y control secuencial HMI/SCADA de simulación.',
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1563207153-f403bf289163?w=600&q=80',
-    alt: 'Configuración física de automatismos para sensado de variables ambientales.',
-  },
-];
 ---
 
-<Layout
-  title="Feria Mecatrónica 2026"
-  description="Exhibición de proyectos estudiantiles de innovación y tecnología — Feria Mecatrónica 2026 UNEXPO Guarenas."
->
-
-  <!-- ══════════════════════ HERO ══════════════════════ -->
-  <section class="relative overflow-hidden border-b border-white/5 py-14 bg-slate-950/40">
-    <div class="absolute inset-0 engineering-grid opacity-30"></div>
-    <div class="absolute -top-10 -right-10 w-72 h-72 bg-sky-500 rounded-full blur-[90px] opacity-10 pointer-events-none"></div>
-
-    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-
-      <!-- Breadcrumb -->
-      <nav class="flex items-center gap-2 text-slate-400 text-xs sm:text-sm mb-6">
-        <a href="/" class="hover:text-white transition-colors">Inicio</a>
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-        </svg>
-        <a href="/galeria" class="hover:text-white transition-colors">Galería</a>
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-        </svg>
-        <span class="text-white font-medium">Feria 2026</span>
+<Layout title="Feria Mecatrónica 2026" description="Feria Mecatrónica 2026 — Próximamente.">
+  <section class="border-b border-gray-100 py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="flex items-center gap-2 text-xs text-gray-400 mb-8">
+        <a href="/" class="hover:text-gray-700 transition-colors">Inicio</a>
+        <span>›</span>
+        <a href="/galeria" class="hover:text-gray-700 transition-colors">Galería</a>
+        <span>›</span>
+        <span class="text-gray-700 font-medium">Feria 2026</span>
       </nav>
-
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
-        <div>
-          <a href="/galeria"
-            class="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl transition-all mb-5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-            </svg>
-            Volver a la Galería
-          </a>
-          <div class="inline-flex items-center gap-2 bg-sky-500/10 border border-sky-500/20 px-3 py-1.5 rounded-full text-xs font-semibold mb-4 ml-3 text-sky-400">
-            ✨ Prototipos de Automatización
-          </div>
-          <h1 class="text-3xl md:text-5xl font-black text-white mt-2">Feria Mecatrónica 2026</h1>
-          <p class="text-slate-400 text-sm sm:text-base mt-3 max-w-xl">
-            La edición más reciente. Exposición del ingenio científico y técnico en proyectos integrados de mecatrónica de la <strong class="text-white">UNEXPO Núcleo Guarenas</strong>.
-          </p>
-        </div>
-        <div class="bg-white/5 border border-white/10 rounded-2xl px-5 py-2.5 text-center flex-shrink-0">
-          <p class="text-2xl font-black text-sky-400 leading-none">{fotos.length}</p>
-          <p class="text-slate-500 text-[10px] font-bold uppercase tracking-wider mt-1">Fotografías</p>
-        </div>
-      </div>
     </div>
   </section>
 
-  <!-- ══════════════════════ GRID DE FOTOS ══════════════════════ -->
-  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <p class="text-slate-500 text-xs sm:text-sm mb-6 text-right">Pasa el cursor y haz clic sobre una fotografía para verla en pantalla completa.</p>
-
-    <!-- Grid de Fotos -->
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-      {fotos.map((foto, i) => (
-        <div class="group relative overflow-hidden rounded-2xl bg-slate-900 border border-white/10 aspect-square shadow-md hover:border-sky-500/30 transition-all duration-300 cursor-pointer">
-          <img
-            src={foto.url}
-            alt={foto.alt}
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out gallery-img"
-            loading={i < 4 ? 'eager' : 'lazy'}
-          />
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-            <p class="text-white text-xs font-semibold leading-relaxed line-clamp-2">{foto.alt}</p>
-          </div>
-        </div>
-      ))}
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-32 flex flex-col items-center justify-center text-center gap-6">
+    <div class="w-16 h-16 bg-amber-50 border border-amber-100 rounded-2xl flex items-center justify-center text-3xl">
+      📷
     </div>
-
-    <!-- Banner Informativo -->
-    <div class="mt-10 bg-sky-500/5 border border-sky-500/10 rounded-2xl p-5 flex items-start gap-4">
-      <div class="text-sky-400 flex-shrink-0 mt-0.5">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5.5 h-5.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      </div>
-      <p class="text-slate-400 text-sm leading-relaxed">
-        <strong>Nota del archivo:</strong> Estas imágenes son representaciones analógicas de los sistemas diseñados. Si cuentas con las capturas de tu propio equipo de proyecto durante la exposición presencial, puedes enviárnoslas para actualizar el archivo histórico.
-      </p>
-    </div>
-
-    <!-- Navegación entre eventos -->
-    <div class="mt-12 flex items-center justify-between">
-      <a href="/galeria/feria-2025" class="inline-flex items-center gap-2 text-sky-400 hover:text-sky-300 font-bold text-sm transition-colors">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-        </svg>
-        &larr; Ver Feria 2025
-      </a>
-      <a href="/galeria" class="inline-flex items-center gap-2 text-sky-400 hover:text-sky-300 font-bold text-sm transition-colors">
-        Archivo General de Innovación &rarr;
-      </a>
-    </div>
+    <h1 class="text-3xl font-bold text-gray-900">Feria Mecatrónica 2026</h1>
+    <p class="text-gray-400 text-sm max-w-sm leading-relaxed">
+      El archivo fotográfico de esta edición estará disponible próximamente. Vuelve después de la feria.
+    </p>
+    <a href="/galeria" class="inline-flex items-center gap-2 bg-gray-900 hover:bg-gray-700 text-white font-semibold text-sm px-5 py-2.5 rounded-lg transition-colors">
+      ← Volver a la galería
+    </a>
   </section>
-
-  <!-- Lightbox Modal (oculto por defecto) -->
-  <div id="lightbox" class="fixed inset-0 bg-slate-950/95 hidden z-50 flex flex-col items-center justify-center p-4 backdrop-blur-md transition-opacity duration-300 opacity-0">
-    <!-- Botón Cerrar -->
-    <button id="lightbox-close" class="absolute top-6 right-6 lg:top-10 lg:right-10 text-white font-extrabold cursor-pointer hover:text-sky-400 transition-colors flex items-center gap-2 text-sm uppercase tracking-wider">
-      Cerrar ✕
-    </button>
-    <!-- Imagen ampliada -->
-    <img id="lightbox-img" class="max-h-[80vh] max-w-full object-contain rounded-2xl border border-white/10 shadow-2xl transition-transform duration-300 scale-95" src="" alt="Vista ampliada" />
-    <!-- Pie de foto en modal -->
-    <p id="lightbox-caption" class="text-slate-300 text-sm mt-4 text-center max-w-xl leading-relaxed"></p>
-  </div>
-
 </Layout>
-
-<!-- Motor Vanilla JS para el Lightbox -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxCaption = document.getElementById('lightbox-caption');
-    const closeBtn = document.getElementById('lightbox-close');
-    const galleryImgs = document.querySelectorAll('.gallery-img');
-
-    // Función para abrir
-    galleryImgs.forEach(img => {
-      img.addEventListener('click', () => {
-        if (!lightbox || !lightboxImg || !lightboxCaption) return;
-        
-        const src = img.getAttribute('src');
-        const alt = img.getAttribute('alt');
-        
-        if (src) {
-          lightboxImg.setAttribute('src', src);
-          lightboxCaption.textContent = alt || '';
-          
-          lightbox.classList.remove('hidden');
-          setTimeout(() => {
-            lightbox.classList.remove('opacity-0');
-            lightboxImg.classList.remove('scale-95');
-            lightboxImg.classList.add('scale-100');
-          }, 10);
-        }
-      });
-    });
-
-    // Función para cerrar
-    const closeLightbox = () => {
-      if (!lightbox || !lightboxImg) return;
-      
-      lightbox.classList.add('opacity-0');
-      lightboxImg.classList.remove('scale-100');
-      lightboxImg.classList.add('scale-95');
-      
-      setTimeout(() => {
-        lightbox.classList.add('hidden');
-        lightboxImg.setAttribute('src', '');
-      }, 300);
-    };
-
-    if(closeBtn) closeBtn.addEventListener('click', closeLightbox);
-    if(lightbox) {
-      lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) {
-          closeLightbox();
-        }
-      });
-    }
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !lightbox?.classList.contains('hidden')) {
-        closeLightbox();
-      }
-    });
-  });
-</script>

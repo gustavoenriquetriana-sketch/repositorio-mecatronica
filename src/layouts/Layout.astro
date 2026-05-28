@@ -1,12 +1,15 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 
 interface Props {
   title: string;
   description?: string;
 }
 
-const { title, description = 'Repositorio académico de guías, proyectos y software para estudiantes de Ingeniería Mecatrónica de la UNEXPO Guarenas.' } = Astro.props;
+const {
+  title,
+  description = "Repositorio académico de guías, proyectos y software para estudiantes de Ingeniería Mecatrónica de la UNEXPO Guarenas.",
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -15,125 +18,212 @@ const { title, description = 'Repositorio académico de guías, proyectos y soft
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-
-    <!-- Open Graph / Redes Sociales / WhatsApp -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/favicon.svg" />
-
-    <!-- Google Fonts: Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <title>{title} | Repositorio Mecatrónica UNEXPO</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
-  <body class="min-h-full flex flex-col bg-slate-950 text-slate-100 antialiased selection:bg-sky-500 selection:text-white">
-
+  <body class="min-h-full flex flex-col bg-white text-gray-900 antialiased">
     <!-- NAVBAR -->
-    <header class="glass-nav">
+    <header class="repo-nav">
       <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-16 sm:h-20">
-
-          <!-- Logo / Brand -->
-          <a href="/" class="flex items-center gap-3 group">
-            <div class="w-10 h-10 bg-gradient-to-br from-sky-500 to-unexpo-blue rounded-xl flex items-center justify-center shadow-md shadow-sky-500/10 group-hover:scale-105 transition-all duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-5.5 h-5.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+        <div class="flex items-center justify-between h-14">
+          <a href="/" class="flex items-center gap-2.5 group">
+            <div
+              class="w-8 h-8 bg-gray-900 rounded-lg flex items-center justify-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-4M9 21H5a2 2 0 01-2-2v-4m0 0h18"
+                ></path>
               </svg>
             </div>
-            <div class="flex flex-col">
-              <span class="text-white font-extrabold text-base sm:text-lg tracking-tight leading-none group-hover:text-sky-400 transition-colors">
-                Mecatrónica
-              </span>
-              <span class="text-sky-400 text-xs font-semibold tracking-wide mt-0.5">UNEXPO Guarenas</span>
+            <div>
+              <span class="font-bold text-sm text-gray-900 leading-none block"
+                >Mecatrónica</span
+              >
+              <span class="text-xs text-gray-400 leading-none"
+                >UNEXPO Guarenas</span
+              >
             </div>
           </a>
 
-          <!-- Nav Links - Desktop -->
-          <div class="hidden md:flex items-center gap-1.5">
-            <a href="/" class="text-slate-300 hover:text-white hover:bg-white/5 px-4 py-2 rounded-xl text-sm font-semibold transition-all">Inicio</a>
-            <a href="/semestres" class="text-slate-300 hover:text-white hover:bg-white/5 px-4 py-2 rounded-xl text-sm font-semibold transition-all">Semestres</a>
-            <a href="/software" class="text-slate-300 hover:text-white hover:bg-white/5 px-4 py-2 rounded-xl text-sm font-semibold transition-all">Software</a>
-            <a href="/galeria" class="text-slate-300 hover:text-white hover:bg-white/5 px-4 py-2 rounded-xl text-sm font-semibold transition-all">Galería</a>
-            <a href="/documentos" class="text-slate-300 hover:text-white hover:bg-white/5 px-4 py-2 rounded-xl text-sm font-semibold transition-all">Documentos</a>
+          <div class="hidden md:flex items-center gap-1">
+            <a
+              href="/"
+              class="text-gray-500 hover:text-gray-900 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors hover:bg-gray-100"
+              >Inicio</a
+            >
+            <a
+              href="/semestres"
+              class="text-gray-500 hover:text-gray-900 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors hover:bg-gray-100"
+              >Semestres</a
+            >
+            <a
+              href="/software"
+              class="text-gray-500 hover:text-gray-900 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors hover:bg-gray-100"
+              >Software</a
+            >
+            <a
+              href="/galeria"
+              class="text-gray-500 hover:text-gray-900 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors hover:bg-gray-100"
+              >Galería</a
+            >
+            <a
+              href="/documentos"
+              class="text-gray-500 hover:text-gray-900 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors hover:bg-gray-100"
+              >Documentos</a
+            >
           </div>
 
-          <!-- Mobile menu button -->
-          <button id="menu-toggle" class="md:hidden text-slate-300 hover:text-white p-2 rounded-xl hover:bg-white/5 transition-all" aria-label="Abrir menú">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          <button
+            id="menu-toggle"
+            class="md:hidden text-gray-500 hover:text-gray-900 p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            aria-label="Abrir menú"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
           </button>
         </div>
 
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden pb-4">
-          <div class="flex flex-col gap-1.5 pt-2 border-t border-white/10">
-            <a href="/" class="text-slate-300 hover:text-white hover:bg-white/5 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all">Inicio</a>
-            <a href="/semestres" class="text-slate-300 hover:text-white hover:bg-white/5 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all">Semestres</a>
-            <a href="/software" class="text-slate-300 hover:text-white hover:bg-white/5 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all">Software</a>
-            <a href="/galeria" class="text-slate-300 hover:text-white hover:bg-white/5 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all">Galería</a>
-            <a href="/documentos" class="text-slate-300 hover:text-white hover:bg-white/5 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all">Documentos</a>
+        <div id="mobile-menu" class="hidden md:hidden pb-3">
+          <div class="flex flex-col gap-1 pt-2 border-t border-gray-100">
+            <a
+              href="/"
+              class="text-gray-600 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded-lg text-sm font-medium transition-colors"
+              >Inicio</a
+            >
+            <a
+              href="/semestres"
+              class="text-gray-600 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded-lg text-sm font-medium transition-colors"
+              >Semestres</a
+            >
+            <a
+              href="/software"
+              class="text-gray-600 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded-lg text-sm font-medium transition-colors"
+              >Software</a
+            >
+            <a
+              href="/galeria"
+              class="text-gray-600 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded-lg text-sm font-medium transition-colors"
+              >Galería</a
+            >
+            <a
+              href="/documentos"
+              class="text-gray-600 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded-lg text-sm font-medium transition-colors"
+              >Documentos</a
+            >
           </div>
         </div>
       </nav>
     </header>
 
-    <!-- MAIN CONTENT -->
-    <main class="flex-1 flex flex-col relative z-10">
+    <main class="flex-1 flex flex-col">
       <slot />
     </main>
 
-    <!-- FOOTER -->
-    <footer class="glass-footer mt-20">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-8 border-b border-white/5 pb-8 mb-8 text-center md:text-left">
-          
-          <div class="flex items-center gap-3 justify-center md:justify-start">
-            <div class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center border border-white/10">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+    <footer class="repo-footer mt-16">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div
+          class="flex flex-col md:flex-row items-center justify-between gap-6"
+        >
+          <div class="flex items-center gap-2.5">
+            <div
+              class="w-8 h-8 bg-gray-900 rounded-lg flex items-center justify-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-4M9 21H5a2 2 0 01-2-2v-4m0 0h18"
+                ></path>
               </svg>
             </div>
             <div>
-              <p class="font-extrabold text-sm text-white">Repositorio Académico de Mecatrónica</p>
-              <p class="text-slate-400 text-xs">UNEXPO Núcleo Guarenas &bull; Venezuela</p>
+              <p class="font-semibold text-sm text-gray-900">
+                Repositorio Académico de Mecatrónica
+              </p>
+              <p class="text-xs text-gray-400">
+                UNEXPO Núcleo Guarenas · Venezuela
+              </p>
             </div>
           </div>
 
-          <div class="text-slate-400 text-sm text-center">
-            &copy; {new Date().getFullYear()} Repositorio Estudiantil. Todos los derechos reservados.
-            <p class="text-xs text-slate-500 mt-1">Vicerrectorado Luis Caballero Mejías</p>
-          </div>
+          <p class="text-xs text-gray-400 text-center">
+            © {new Date().getFullYear()} Repositorio Estudiantil · Hecho por Luis
+            Caballero Mejías
+          </p>
 
-          <div class="flex gap-4 justify-center md:justify-end text-sm">
-            <a href="/" class="text-slate-400 hover:text-sky-400 transition-colors">Inicio</a>
-            <a href="/semestres" class="text-slate-400 hover:text-sky-400 transition-colors">Semestres</a>
-            <a href="/documentos" class="text-slate-400 hover:text-sky-400 transition-colors">Documentos</a>
+          <div class="flex gap-4 text-sm">
+            <a
+              href="/"
+              class="text-gray-400 hover:text-gray-700 transition-colors"
+              >Inicio</a
+            >
+            <a
+              href="/semestres"
+              class="text-gray-400 hover:text-gray-700 transition-colors"
+              >Semestres</a
+            >
+            <a
+              href="/documentos"
+              class="text-gray-400 hover:text-gray-700 transition-colors"
+              >Documentos</a
+            >
           </div>
-
         </div>
 
-        <div class="text-center">
-          <p class="text-[10px] text-slate-600 uppercase tracking-widest leading-relaxed max-w-xl mx-auto">
-            Este portal ha sido creado para fines exclusivamente académicos y de apoyo a la comunidad de estudiantes del Núcleo Guarenas de la UNEXPO.
+        <div class="mt-8 pt-6 border-t border-gray-100 text-center">
+          <p class="text-xs text-gray-300 uppercase tracking-widest">
+            Portal creado para fines exclusivamente académicos · Comunidad de
+            estudiantes UNEXPO Guarenas
           </p>
         </div>
       </div>
     </footer>
 
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const toggle = document.getElementById('menu-toggle');
-        const menu = document.getElementById('mobile-menu');
-        toggle?.addEventListener('click', () => {
-          menu?.classList.toggle('hidden');
+      document.addEventListener("DOMContentLoaded", () => {
+        const toggle = document.getElementById("menu-toggle");
+        const menu = document.getElementById("mobile-menu");
+        toggle?.addEventListener("click", () => {
+          menu?.classList.toggle("hidden");
         });
       });
     </script>
-
   </body>
 </html>

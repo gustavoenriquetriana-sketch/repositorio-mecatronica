@@ -100,6 +100,7 @@ const orientacion = semestre ? (orientacionesAcademicas[semestre] || '') : '';
         <DriveCard
           titulo={materia}
           descripcion={`Material de estudio, guías teóricas y prácticas de ${materia}.`}
+          semestre={semestre}
         />
       ))}
     </div>

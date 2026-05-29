@@ -1,99 +1,60 @@
-/**
- * Repositorio Estudiantil de Mecatrónica - UNEXPO Guarenas
- * 
- * Configuración centralizada de enlaces a carpetas de Google Drive.
- * 
- * - Si dejas el enlace vacío (""), la interfaz renderizará automáticamente
- *   un botón de "Aportar Material" que dirige al formulario de contribución,
- *   promoviendo la participación de la comunidad.
- * - Si colocas un enlace válido (ej. "https://drive.google.com/..."), el botón
- *   cambiará a "Descargar Recursos" y se activará.
- */
-
 export const driveLinks = {
-  // ══════════════════════ SOFTWARE ══════════════════════
-  "SolidWorks": "",
-  "MATLAB": "",
-  "Proteus": "",
-  "TIA Portal": "",
-  "FluidSIM": "",
-  "BovedaMaestra": "", // Enlace para el repositorio completo de la nube
-
-  // ══════════════════════ SEMESTRE I ══════════════════════
-  "Autodesarrollo": "",
-  "Dibujo I": "",
-  "Inglés I": "",
-  "Lenguaje y Redacción": "",
-  "Matemática I": "",
-  "Práctica Profesional": "",
-  "Química General": "",
-
-  // ══════════════════════ SEMESTRE II ══════════════════════
-  "Dibujo II": "",
-  "Física I": "",
-  "Inglés II": "",
-  "Matemática II": "",
-  "Solución de Problemas": "",
-  "Técnicas de Lectura": "",
-
-  // ══════════════════════ SEMESTRE III ══════════════════════
-  "Algebra Lineal": "",
-  "Computación I": "",
-  "Creatividad": "",
-  "Estática": "",
-  "Física II": "",
-  "Laboratorio de Física": "",
-  "Matemática III": "",
-
-  // ══════════════════════ SEMESTRE IV ══════════════════════
-  "Circuitos Eléctricos I": "",
-  "Computación II": "",
-  "Dinámica": "",
-  "Ecología y Ambiente": "",
-  "Ingeniería de Materiales": "",
-  "Matemáticas IV": "",
-
-  // ══════════════════════ SEMESTRE V ══════════════════════
-  "Circuitos Eléctricos II": "",
-  "Electrónica I": "",
-  "Mecánica de Materiales": "",
-  "Mecanismos": "",
-  "Transferencia de Energía": "",
-  "Probabilidad y Estadística": "",
-
-  // ══════════════════════ SEMESTRE VI ══════════════════════
-  "Control I": "",
-  "Diseño de Elementos de Máquinas": "",
-  "Diseño de Sistemas Lógicos": "",
-  "Economía": "",
-  "Tecnología de Manufactura": "",
-  "Electrónica II": "",
-  "Mecánica de los Fluidos": "",
-
-  // ══════════════════════ SEMESTRE VII ══════════════════════
-  "Actuadores Eléctricos": "",
-  "Control II": "",
-  "Laboratorio de Diseño de Sistemas Lógicos": "",
-  "Laboratorio de Electrónica Industrial": "",
-  "Laboratorio de Instrumentación y Mediciones": "",
-  "Metodologías de Diseño Mecatrónico": "",
-
-  // ══════════════════════ SEMESTRE VIII ══════════════════════
-  "Automatización Industrial I": "",
-  "Laboratorio de Control Automático": "",
-  "Microcontroladores": "",
-  "Neumática y Óleohidráulica": "",
-  "Proyectos de Ingeniería Mecatrónica I": "",
-  "Redes Industriales": "",
-
-  // ══════════════════════ SEMESTRE IX ══════════════════════
-  "Automatización Industrial II": "",
-  "Desarrollo de Emprendedores": "",
-  "Electiva Profesional": "",
-  "Proyectos de Ingeniería Mecatrónica II": "",
-  "Tópicos Especiales de Mecatrónica": "",
-  "Valores en el Ejercicio Profesional": "",
-
-  // ══════════════════════ SEMESTRE X ══════════════════════
-  "Entrenamiento Industrial (Pasantías)": ""
+  "Autodesarrollo": "https://drive.google.com/drive/folders/19hPGkT7S2JlLGls3Ur2kEnfSbTFsphQK",
+  "Dibujo I": "https://drive.google.com/drive/folders/1zZjk5dnryOPlq6W-zxxmw8n7rXL0W1Bg",
+  "Inglés I": "https://drive.google.com/drive/folders/15eW9wTDRoYljmEuNuZWd7TwVxHQXoB9Z",
+  "Lenguaje y Redacción": "https://drive.google.com/drive/folders/1LkX7p8hvTW_S2uUDK1xpDjWLbps5g8nL",
+  "Matemática I": "https://drive.google.com/drive/folders/10lMnnBibEKvvZUOlNQhcGArBE_Xxcnjf",
+  "Práctica Profesional": "https://drive.google.com/drive/folders/1nRzsJ7AGL5xZu118a3sNOiXtZRZYJ5C1",
+  "Química General": "https://drive.google.com/drive/folders/1_oPfagF3zXHxolaB7y8QWhjhdzYLN5_d",
+  "Dibujo II": "https://drive.google.com/drive/folders/1kbgXj2_fEYgduAbIaJPC5o3DnQUzxmp8",
+  "Física I": "https://drive.google.com/drive/folders/1Wo24slqAjSP_tOgvzF5lDJaK74JSJI7T",
+  "Inglés II": "https://drive.google.com/drive/folders/1Nl4WFUlNIBvoysKwzK-4MaoYU5m9i5tq",
+  "Matemática II": "https://drive.google.com/drive/folders/1LZAgWHqVlSRnUY1YVLBvWqizM9UuuU3t",
+  "Solución de Problemas": "https://drive.google.com/drive/folders/1hx-vyhpWry1i2WEHC-DRC4JswFY6G0xB",
+  "Técnicas de Lectura": "https://drive.google.com/drive/folders/1b534uMFo2hGfQibf6dHIUbfjLNEj2w5R",
+  "Algebra Lineal": "https://drive.google.com/drive/folders/1ENsDnOY-1nIRXmpgwiQih9s4QCuftS81",
+  "Computación I": "https://drive.google.com/drive/folders/1habdPLSjuo4bxEY_ytiVOYwmE4ml8XFO",
+  "Creatividad": "https://drive.google.com/drive/folders/1n5jUV_nPiSYz8furGKQU2pT9UKmnhSod",
+  "Estática": "https://drive.google.com/drive/folders/1kdVzqrXIxxAsh8ypLiYLOaZg_s112qG6",
+  "Física II": "https://drive.google.com/drive/folders/1p57Te7sUaSoIOw9rR0SmwiiJdAPIgEpt",
+  "Laboratorio de Física": "https://drive.google.com/drive/folders/1iHrojqXej9IeNpbbULF-hDEur9jKvNBD",
+  "Matemática III": "https://drive.google.com/drive/folders/13-lNPN6QwON5OTWemFES7oo9sQFpLRlv",
+  "Circuitos Eléctricos I": "https://drive.google.com/drive/folders/1d8HUsm--fECtLsJal2rF9zpLF9LDiLlJ",
+  "Computación II": "https://drive.google.com/drive/folders/1-zVsnoujlSlO-W4zYOGm2UlekJEIu4XD",
+  "Dinámica": "https://drive.google.com/drive/folders/1Po0t03G7ZWnlDSEUAMkqtRxwEBfeqqED",
+  "Ecología y Ambiente": "https://drive.google.com/drive/folders/1sIm13g3t1Wt_EAVGvUYurmeZ1tWkRT07",
+  "Ingeniería de Materiales": "https://drive.google.com/drive/folders/1iSBrJ-qQGbrYKxJ9x2wc0YwrGPtn5spQ",
+  "Matemáticas IV": "https://drive.google.com/drive/folders/1dmAkEUS5v_6ewCCEiiwvelVUHT-3oPP7",
+  "Circuitos Eléctricos II": "https://drive.google.com/drive/folders/1e_6eLYRwEQStgj0uxbc8cdt82eHd-8MH",
+  "Electrónica I": "https://drive.google.com/drive/folders/1jCjVuCQWMPXlshvS-JVYiZmmfOFMJaWE",
+  "Mecánica de Materiales": "https://drive.google.com/drive/folders/1Y-TpwvLa0StcOTn2qb_dgd9R65x50L6E",
+  "Mecanismos": "https://drive.google.com/drive/folders/1qU3hKNey3Bklr9c0Kdw6fhsoQp7PKImk",
+  "Transferencia de Energía": "https://drive.google.com/drive/folders/1xlPkKHpGSvs81BYT4ABFfqiD7moR1bmp",
+  "Probabilidad y Estadística": "https://drive.google.com/drive/folders/1nR3xTlKCHvVIkZxlB_GBg-vbpPoXLXXd",
+  "Control I": "https://drive.google.com/drive/folders/1KPImVztuDNsseZkoeYmL8VkYc5DCOYaO",
+  "Diseño de Elementos de Máquinas": "https://drive.google.com/drive/folders/1Q0Z2IjpHxD0nIwCw6_YKHVnmL-wUFD0f",
+  "Diseño de Sistemas Lógicos": "https://drive.google.com/drive/folders/1Ap_28W1z_RyJ7Jv0gzAjtXKAQdVpXQna",
+  "Economía": "https://drive.google.com/drive/folders/1ZNM4FULx8d4PzAEPt9GkyKvzx71qFfgj",
+  "Tecnología de Manufactura": "https://drive.google.com/drive/folders/1WxAQ9GWZ60l7Natjk19t0ZJezZdIaQ4k",
+  "Electrónica II": "https://drive.google.com/drive/folders/1uzx6m-NSxr7AADP5hHlWGvThFSnhS1rs",
+  "Mecánica de los Fluidos": "https://drive.google.com/drive/folders/123d8P2usFmlk-YryENwDSj8b9sr6Nf_H",
+  "Actuadores Eléctricos": "https://drive.google.com/drive/folders/1Mew7isODokRu5T4pH6tX8fNr_IRoam2D",
+  "Control II": "https://drive.google.com/drive/folders/1_AnbKOF5NCA7mtqgCD5P4B5V0-6BY0d6",
+  "Laboratorio de Diseño de Sistemas Lógicos": "https://drive.google.com/drive/folders/1JxkfCMDuCl5aGoj0epE4-Wtl3JIhCxvi",
+  "Laboratorio de Electrónica Industrial": "https://drive.google.com/drive/folders/18V_nhlyh3Dn5rForK33EEDOXf1gR6W-s",
+  "Laboratorio de Instrumentación y Mediciones": "https://drive.google.com/drive/folders/1Bq58DB0bQ5uJFbzgzLterA31R2RnApnV",
+  "Metodologías de Diseño Mecatrónico": "https://drive.google.com/drive/folders/1ZcbdeOo_ZxZQ55JbzEoAzmHKgLg0Gq9o",
+  "Automatización Industrial I": "https://drive.google.com/drive/folders/1W6a3MtqWznxxbKyjsAbn6D5JIRd5_aJ5",
+  "Laboratorio de Control Automático": "https://drive.google.com/drive/folders/1_abOmDMPjzuNJiiFdHj-MuCEWbvPKiOK",
+  "Microcontroladores": "https://drive.google.com/drive/folders/1DaUuV-uZX4oQeYkcVxmCEXU_vsNJAxdJ",
+  "Neumática y Óleohidráulica": "https://drive.google.com/drive/folders/12qt_04_sjbhy1PKJTENqAUu0chKiOf0F",
+  "Proyectos de Ingeniería Mecatrónica I": "https://drive.google.com/drive/folders/1tutEe7P3b07RbgleYuQhDIpaYC1CBmGY",
+  "Redes Industriales": "https://drive.google.com/drive/folders/1Ix2Y-A9fLgSP6T447WhN5G8GBBMEM1_p",
+  "Automatización Industrial II": "https://drive.google.com/drive/folders/14Ho8GXAtA7ddiJY17t2PqIqD62jrnsbB",
+  "Desarrollo de Emprendedores": "https://drive.google.com/drive/folders/1wEY-PY4mw1QnRXnGLeN1pZRf2kKJEvTP",
+  "Electiva Profesional": "https://drive.google.com/drive/folders/1Hm5d9y74wzhFNUTVrVCI2qU7AGByVG87",
+  "Proyectos de Ingeniería Mecatrónica II": "https://drive.google.com/drive/folders/1B9gM1Emn3smACTCmofHuQ5boT3ioaTSi",
+  "Tópicos Especiales de Mecatrónica": "https://drive.google.com/drive/folders/1Gq4gKN2ZNLlLPFIqXoqwNGX6sggS_9Im",
+  "Valores en el Ejercicio Profesional": "https://drive.google.com/drive/folders/1eUC1JaLhQa4tzzt3cmAHrqDYnqP30pTT",
+  "Entrenamiento Industrial (Pasantías)": "https://drive.google.com/drive/folders/187BAV8RPqFEs0WQRLXmwGQBhSFgpbqME",
 };
